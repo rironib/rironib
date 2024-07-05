@@ -1,3 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Custom Fonts*/
+.font-atomic {
+    font-family: "Atomic Age", cursive;
+}
+
+.font-lexend {
+    font-family: "Lexend", sans-serif;
+}
