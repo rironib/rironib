@@ -24,7 +24,7 @@ const Header = () => {
             </div>
             {isOpen && (
                 <div className="w-full h-screen fixed lg:hidden top-16 bg-slate-700 text-white">
-                    <div className="grid justify-center items-center text-center gap-4 p-4">
+                    <div onClick={() => setIsOpen(false)} className="grid justify-center items-center text-center gap-8 p-4">
                         <NavLink to='/'>Home</NavLink>
                         <NavLink to='/about'>About</NavLink>
                         <NavLink to='/skills'>Skills</NavLink>
