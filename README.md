@@ -6,9 +6,10 @@ I am RONiB, a Web Developer based in Bangladesh, specializing in React, Tailwind
 
 # 📊 GitHub Stats:
 
-<p align="center">
-  <img width="60%" src="https://github-readme-streak-stats.herokuapp.com?user=rironib&theme=react&hide_border=true&background=0D1117&stroke=0D1117&fire=FF1CF7&sideLabels=00F0FF&currStreakNum=FF1CF7&ring=FF1CF7&currStreakLabel=FF1CF7&sideNums=00F0FF" />
-</p>
+<div align="center">
+
+[![GitHub Streak](https://streak-stats.demolab.com?user=rironib&theme=transparent&hide_border=true&date_format=j%20M%5B%20Y%5D&dates=FFFFFF&stroke=EBEBEB00&fire=FF0000&currStreakNum=FF0000&ring=FF0000&currStreakLabel=FF0000&sideNums=DE24D9&sideLabels=DE24D9)](https://git.io/streak-stats)
+</div>
 
 # 💻 Tech Stack:
 
