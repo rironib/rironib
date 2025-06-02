@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.logo {
+  color: #ff4240;
+  font-weight: 700;
+}
+
+.input {
+  @apply w-full rounded-md border bg-slate-200 px-3 py-3 outline-none dark:border-slate-700 dark:bg-dark dark:text-gray-400 lg:px-4;
+}
+
+/* Page CSS */
+.page {
+  @apply space-y-3;
+}
+
+.page h2 {
+  @apply text-2xl font-bold;
+}
+
+.page h3 {
+  @apply text-xl font-semibold;
+}
+
+.page h4 {
+  @apply text-lg font-medium;
+}
+
+.page p {
+  @apply font-normal;
+}
+
+.page ul {
+  @apply ml-6 space-y-2;
+}
+.page ul li {
+  @apply list-inside list-disc;
+}
+
+/* Loading Animation*/
+:root {
+  --loading-color: #3498db;
+  --loading-shadow: rgba(52, 152, 219, 0.4);
+  --loading-duration: 1.5s;
+}
+
+.loading {
+  width: 20px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--loading-color);
+  box-shadow: 0 0 0 0 var(--loading-shadow);
+  animation: l2 var(--loading-duration) infinite linear;
+  position: relative;
+}
+
+.loading:before,
+.loading:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: 0 0 0 0 var(--loading-shadow);
+  animation: inherit;
+  animation-delay: -0.5s;
+}
+
+.loading:after {
+  animation-delay: -1s;
+}
+
+@keyframes l2 {
+  100% {
+    box-shadow: 0 0 0 40px rgba(0, 0, 0, 0);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --loading-color: #ffffff;
+    --loading-shadow: rgba(255, 255, 255, 0.4);
+  }
+}
