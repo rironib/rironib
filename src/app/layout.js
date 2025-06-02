@@ -27,6 +27,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        <meta name="apple-mobile-web-app-title" content="RONiB" />
         <GoogleAnalytics />
       </head>
       <body
