@@ -1,4 +1,5 @@
 import Form from "./Form";
+import { atomic_age } from "@/config/fonts";
 
 export async function generateMetadata() {
   return {
@@ -19,7 +20,9 @@ export async function generateMetadata() {
 const Page = () => {
   return (
     <main className="mx-auto my-6 w-11/12 max-w-[1275px] lg:my-8 lg:w-10/12">
-      <div className="mb-6 text-center text-3xl font-bold lg:text-4xl">
+      <div
+        className={`${atomic_age.className} mb-6 text-center text-3xl font-bold lg:text-4xl`}
+      >
         Contact us
       </div>
       <Form />

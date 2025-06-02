@@ -10,16 +10,13 @@ import { Providers } from "./providers";
 export async function generateMetadata() {
   return {
     title: {
-      default: `${siteConfig.name} – Find Similar Websites`,
-      template: `%s – Find Similar Websites`,
+      default: `${siteConfig.name} – Web Developer, Designer, and Freelancer`,
+      template: `%s – Web Developer, Designer, and Freelancer`,
     },
     description: siteConfig.description,
     keywords: siteConfig.keywords,
     author: siteConfig.author,
     robots: siteConfig.robots,
-    icons: {
-      icon: siteConfig.icon,
-    },
   };
 }
 
@@ -31,7 +28,7 @@ export default function RootLayout({ children }) {
         <GoogleAnalytics />
       </head>
       <body
-        className={`${exo.className} flex min-h-screen flex-col justify-between bg-slate-200 text-black dark:bg-dark dark:text-slate-300`}
+        className={`${exo.className} flex min-h-screen flex-col justify-between`}
       >
         <Toaster />
         <Providers>
