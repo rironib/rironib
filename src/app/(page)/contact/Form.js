@@ -1,11 +1,16 @@
 "use client";
 
 import { axiosPublic } from "@/hooks/axiosPublic";
-import toast from "react-hot-toast";
 import { Button, Input, Textarea } from "@heroui/react";
+import { useState } from "react";
+import toast from "react-hot-toast";
 
 const Form = () => {
+  const [loading, setLoading] = useState(false);
+
   const handleSubmit = async (e) => {
+    setLoading(true);
+
     e.preventDefault();
     const form = e.target;
     const firstName = form.firstName.value.trim();
@@ -31,6 +36,8 @@ const Form = () => {
       toast.error(
         e?.response?.data?.message || e?.message || "Submission failed.",
       );
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -96,6 +103,7 @@ const Form = () => {
             </div>
             <div className="w-full text-center lg:col-span-2">
               <Button
+                isLoading={loading}
                 type="submit"
                 className="w-full sm:max-w-60"
                 size="lg"

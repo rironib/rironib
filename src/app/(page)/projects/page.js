@@ -1,6 +1,7 @@
 import { RiExternalLinkLine } from "react-icons/ri";
 import { Button } from "@heroui/react";
 import { atomic_age } from "@/config/fonts";
+import Image from "next/image";
 
 const Page = () => {
   return (
@@ -15,10 +16,12 @@ const Page = () => {
         <div className="rounded-xl bg-default-50 px-4 py-12 lg:px-12">
           <div className="grid gap-6 lg:grid-cols-2">
             <div className="flex h-max flex-col gap-4 rounded-xl bg-default-100 p-6">
-              <img
+              <Image
                 src="/projects/foodhub-bd.web.app.jpg"
                 alt="Food Hub - Community Food Sharing Website"
                 className="rounded-xl"
+                width={1280}
+                height={1080}
               />
               <h3 className="text-xl font-bold">
                 Food Hub - Community Food Sharing Website
@@ -45,10 +48,12 @@ const Page = () => {
               </div>
             </div>
             <div className="flex h-max flex-col gap-4 rounded-xl bg-default-100 p-6">
-              <img
+              <Image
                 src="/projects/real-estate-607b0.web.app.jpg"
                 alt="BD Estate | Bangladeshi Top Real Estate Agency"
                 className="rounded-xl"
+                width={1280}
+                height={1080}
               />
               <h3 className="text-xl font-bold">
                 BD Estate | Bangladeshi Top Real Estate Agency

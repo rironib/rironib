@@ -1,5 +1,6 @@
 import { atomic_age } from "@/config/fonts";
 import { RiSendPlane2Line } from "react-icons/ri";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -8,13 +9,13 @@ export default function Home() {
         <div className="flex flex-col-reverse items-center justify-center gap-16 lg:flex-row lg:gap-8">
           <div className="grid gap-3 text-center lg:text-start">
             <div className="font-atomic text-3xl font-bold lg:text-5xl">
-              Hi, I'm <span className={atomic_age.className}>RON𝒾B</span>
+              Hi, I&apos;m <span className={atomic_age.className}>RON𝒾B</span>
             </div>
             <div className="mb-2 text-lg font-medium text-violet-400">
               Web Developer
             </div>
             <div className="mb-6 dark:text-gray-400">
-              H:gh level experience in web design &amp; development knowledge,
+              H:gh level experience in web design and development knowledge,
               producing quality work.
             </div>
             <div className="flex justify-center lg:justify-start">
@@ -27,7 +28,13 @@ export default function Home() {
             </div>
           </div>
           <div className="flex w-full justify-center">
-            <img src="/pro.png" alt="RON:B" className="w-60 lg:w-72" />
+            <Image
+              src="/pro.png"
+              alt="RON:B"
+              className="w-60 lg:w-72"
+              width={480}
+              height={480}
+            />
           </div>
         </div>
       </main>

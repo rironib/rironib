@@ -1,34 +1,62 @@
-import { NextResponse } from "next/server";
 import clientPromise from "@/lib/mongodb";
+import { NextResponse } from "next/server";
+
+const allowedOrigins = ["https://www.sitelike.me", "http://localhost:3000"];
+
+export async function OPTIONS(req) {
+  const origin = req.headers.get("origin") || "";
+  if (!allowedOrigins.includes(origin)) {
+    return new NextResponse(null, {
+      status: 403,
+    });
+  }
+
+  return new NextResponse(null, {
+    status: 204,
+    headers: {
+      "Access-Control-Allow-Origin": origin,
+      "Access-Control-Allow-Methods": "GET,POST,OPTIONS",
+      "Access-Control-Allow-Headers": "Content-Type",
+    },
+  });
+}
 
 export async function POST(req) {
+  const origin = req.headers.get("origin") || "";
+  if (!allowedOrigins.includes(origin)) {
+    return NextResponse.json({ error: "Origin not allowed" }, { status: 403 });
+  }
+
   const client = await clientPromise;
   const db = client.db("RonibDB");
   const contactDB = db.collection("contactDB");
 
   const body = await req.json();
-
-  if (!body || Object.keys(body).length === 0) {
+  if (!body) {
     return NextResponse.json({ error: "No data provided" }, { status: 400 });
   }
 
-  body.createdAt = new Date();
-
-  try {
-    const result = await contactDB.insertOne(body);
-    return NextResponse.json({
+  const result = await contactDB.insertOne(body);
+  return new NextResponse(
+    JSON.stringify({
       message: "Submitted successfully.",
       insertedId: result.insertedId,
-    });
-  } catch (err) {
-    return NextResponse.json(
-      { error: "Database insert failed" },
-      { status: 500 },
-    );
-  }
+    }),
+    {
+      status: 200,
+      headers: {
+        "Access-Control-Allow-Origin": origin,
+      },
+    },
+  );
 }
 
 export async function GET(req) {
+  const origin = req.headers.get("origin") || "";
+  if (!allowedOrigins.includes(origin)) {
+    return NextResponse.json({ error: "Origin not allowed" }, { status: 403 });
+  }
+
   const client = await clientPromise;
   const db = client.db("RonibDB");
   const contactDB = db.collection("contactDB");
@@ -45,14 +73,18 @@ export async function GET(req) {
       .skip(skip)
       .limit(pageSize)
       .toArray();
-
     const total = await contactDB.countDocuments();
     const totalPages = Math.ceil(total / pageSize);
 
-    return NextResponse.json({ total, totalPages, data });
+    return new NextResponse(JSON.stringify({ total, totalPages, data }), {
+      status: 200,
+      headers: {
+        "Access-Control-Allow-Origin": origin,
+      },
+    });
   } catch (err) {
     return NextResponse.json(
-      { error: "Failed to fetch contact data" },
+      { error: "Failed to fetch data" },
       { status: 500 },
     );
   }
