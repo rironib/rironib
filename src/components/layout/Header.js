@@ -31,7 +31,7 @@ const Header = () => {
       <NavbarContent justify="end">
         <Link
           className="hidden items-center gap-2 rounded border border-secondary-400 px-4 py-1 font-medium sm:flex"
-          href="https://drive.google.com/file/d/1Q_p3zPBFmQ0h_txBzdwx0mB3dtIcDnKG/view?pli=1"
+          href="https://rironib.vercel.app/files/Resume-[RONiB].pdf"
           target="_blank"
         >
           <RiDownloadCloud2Line />

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import {
-  RiGithubFill,
   RiFacebookFill,
+  RiGithubFill,
   RiTelegram2Line,
   RiTwitterXLine,
   RiYoutubeLine,
@@ -34,15 +34,13 @@ const Footer = () => {
         </div>
         <div className="flex items-center justify-center gap-6 text-3xl font-bold">
           <Link
-              href="https://github.com/rironib"
-              aria-label="Facebook"
+            href="https://github.com/rironib"
+            aria-label="Github"
+            target="_blank"
           >
-            <RiGithubFill  />
+            <RiGithubFill />
           </Link>
-          <Link
-            href="#"
-            aria-label="Facebook"
-          >
+          <Link href="#" aria-label="Facebook">
             <RiFacebookFill />
           </Link>
           <Link href="#" aria-label="Twitter">
