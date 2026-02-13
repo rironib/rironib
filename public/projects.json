@@ -24,8 +24,8 @@
     "title": "Plumber | Professional Plumbing Service in America",
     "image": "/projects/plumber/home.webp",
     "description": "A professional service landing page for a plumbing business in America, featuring modern design and interactive elements.",
-    "stack": "Next.js, TailwindCSS, Mongoose, HeroUI",
-    "link": "#",
+    "stack": "Next.js, TailwindCSS, MongoDB, Mongoose",
+    "link": "https://plumber-test.netlify.app/",
     "date": "2024-01-03",
     "gallery": [
       "/projects/plumber/home.webp",
