@@ -1,0 +1,40 @@
+[
+  {
+    "slug": "foodhub-bd",
+    "title": "Food Hub - Community Food Sharing Website",
+    "image": "/projects/foodhub-bd.web.app.jpg",
+    "description": "A free food sharing website based on Bangladesh. Where anybody can donate food and get free food.",
+    "stack": "React, TailwindCSS, NodeJS, MongoDB, Firebase",
+    "link": "https://foodhub-bd.web.app",
+    "date": "2024-01-01",
+    "gallery": ["/projects/foodhub-bd.web.app.jpg"]
+  },
+  {
+    "slug": "bd-estate",
+    "title": "BD Estate | Bangladeshi Top Real Estate Agency",
+    "image": "/projects/real-estate-607b0.web.app.jpg",
+    "description": "A free food sharing website based on Bangladesh. Where anybody can donate food and get free food.",
+    "stack": "React, TailwindCSS, NodeJS, MongoDB, Firebase",
+    "link": "https://real-estate-607b0.web.app",
+    "date": "2024-01-02",
+    "gallery": ["/projects/real-estate-607b0.web.app.jpg"]
+  },
+  {
+    "slug": "plumber",
+    "title": "Plumber | Professional Plumbing Service in America",
+    "image": "/projects/plumber/home.webp",
+    "description": "A professional service landing page for a plumbing business in America, featuring modern design and interactive elements.",
+    "stack": "Next.js, TailwindCSS, Mongoose, HeroUI",
+    "link": "#",
+    "date": "2024-01-03",
+    "gallery": [
+      "/projects/plumber/home.webp",
+      "/projects/plumber/about.webp",
+      "/projects/plumber/services.webp",
+      "/projects/plumber/locations.webp",
+      "/projects/plumber/contact.webp",
+      "/projects/plumber/careers.webp",
+      "/projects/plumber/testmonials.webp"
+    ]
+  }
+]

@@ -1,6 +1,6 @@
 "use client";
 
-import { axiosPublic } from "@/hooks/axiosPublic";
+import { contactAction } from "@/actions/contact";
 import { Button, Input, Textarea } from "@heroui/react";
 import { useState } from "react";
 import toast from "react-hot-toast";
@@ -9,9 +9,9 @@ const Form = () => {
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e) => {
+    e.preventDefault();
     setLoading(true);
 
-    e.preventDefault();
     const form = e.target;
     const firstName = form.firstName.value.trim();
     const lastName = form.lastName.value.trim();
@@ -25,17 +25,15 @@ const Form = () => {
     const data = { firstName, lastName, email, phone, address, site, message };
 
     try {
-      const res = await axiosPublic.post(`/api/contact`, data);
-      if (res?.data?.insertedId) {
-        toast.success("Submitted successfully.");
+      const res = await contactAction(data);
+      if (res?.success) {
+        toast.success(res.message);
         form.reset();
       } else {
-        toast.error(res.data.message || "Something went wrong.");
+        toast.error(res.message || "Something went wrong.");
       }
     } catch (e) {
-      toast.error(
-        e?.response?.data?.message || e?.message || "Submission failed.",
-      );
+      toast.error(e?.message || "Submission failed.");
     } finally {
       setLoading(false);
     }
