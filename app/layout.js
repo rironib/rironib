@@ -32,7 +32,7 @@ export default function RootLayout({ children }) {
         <Providers>
           <div className="flex min-h-screen flex-col">
             <Header />
-            <main className="mx-auto flex w-11/12 max-w-[1275px] flex-grow flex-col justify-center p-4 py-12 lg:w-10/12 lg:py-20 lg:pt-10">
+            <main className="mx-auto flex w-11/12 max-w-[1275px] flex-grow flex-col justify-center px-2 sm:px-4 md:px-6 lg:px-8 xl:px-0 py-6 sm:py-8 md:py-10 lg:py-12">
               {children}
             </main>
             <Footer />

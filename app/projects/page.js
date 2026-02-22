@@ -22,12 +22,10 @@ const Page = async () => {
         </div>
         <div className="dark:text-gray-400">My Some Notable Works.</div>
       </div>
-      <div className="px-2 sm:px-4 md:px-6 lg:px-8 xl:px-0">
-        <div className="grid gap-6 lg:grid-cols-2">
-          {projects.map((project, index) => (
-            <ProjectCard key={index} project={project} />
-          ))}
-        </div>
+      <div className="grid gap-6 lg:grid-cols-2">
+        {projects.map((project, index) => (
+        <ProjectCard key={index} project={project} />
+        ))}
       </div>
     </>
   );
